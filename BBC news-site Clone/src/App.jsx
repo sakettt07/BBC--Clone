@@ -1,13 +1,15 @@
 import './App.css'
-import Footer from './components/Footer'
-import Signin from './components/signin'
+import Navbar from './components/Navbar';
+// import Footer from './components/Footer'
+// import Signin from './components/Signin'
 
 function App() {
 
   return (
     <>
-    <Signin />
-    <Footer />
+    {/* <Signin /> */}
+    <Navbar />
+    {/* <Footer /> */}
     </>
   )
 }

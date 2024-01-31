@@ -3,6 +3,7 @@ import frontimg from "../images/frontimg.png";
 import logo from "../images/logo_2.png";
 import {signInWithPopup} from "firebase/auth";
 import { auth,googleProvider } from '../firebase/setup';
+import Footer from './Footer';
 
 const Signin = () => {
   const googleSignin=async()=>{
@@ -15,6 +16,7 @@ const Signin = () => {
     // console.log(auth);
   }
   return (
+    <>
     <div className='bg-black grid grid-cols-2 h-screen'>
       {/* creating the left part */}
       <div className='bg-black text-center'>
@@ -28,6 +30,8 @@ const Signin = () => {
       <div className='relative '><img className='absolute right-1 h-screen w-[610px] object-cover' src={frontimg} /></div>
       <h1 className='text-white font-bold mt-[272px] ml-6 hover:underline hover:text-slate-400'>Find out more about BBC on the official site</h1>
     </div>
+    <Footer />
+    </>
   )
 }
 
