@@ -4,16 +4,23 @@ import logo from "../images/logo_2.png";
 import {signInWithPopup} from "firebase/auth";
 import { auth,googleProvider } from '../firebase/setup';
 import Footer from './Footer';
+import { useNavigate } from 'react-router-dom';
 
 const Signin = () => {
+
+  const navigate=useNavigate();
   const googleSignin=async()=>{
     try {
       await signInWithPopup(auth,googleProvider);
+      auth.currentUser && navigate("/");
       
     } catch (error) {
       console.log(error);
     }
     // console.log(auth);
+  }
+  const onHome=()=>{
+    navigate("/");
   }
   return (
     <>
@@ -22,8 +29,8 @@ const Signin = () => {
       <div className='bg-black text-center'>
         <img className='h-16 ml-[18rem] mt-40 rounded-none cursor-pointer' src={logo} alt="" />
         <h1  className='text-white text-3xl mt-7 font-bold'>Sign in</h1>
-        <button onClick={googleSignin} type="button" class="text-white mt-8 bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium text-xl px-5 py-2.5 text-center w-80 hover:scale-110 ">Next</button>
-        <h1 className='text-blue-400 underline hover:text-blue-700 mt-6 text-lg font-semibold'>Sign In now</h1>
+        <button onClick={googleSignin} type="button" class="text-white mt-8 bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium text-xl px-5 py-2.5 text-center w-80 hover:scale-110 ">Sign In</button>
+        <h1 onClick={onHome} className='text-blue-400 underline hover:text-blue-700 mt-6 text-lg font-semibold cursor-pointer'>Continue Without Sign in</h1>
       </div>
 
       {/* creating the right part */}

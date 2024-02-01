@@ -1,15 +1,17 @@
-import './App.css'
-import Navbar from './components/Navbar';
-// import Footer from './components/Footer'
-// import Signin from './components/Signin'
+import './App.css';
+import {Route,Routes} from "react-router-dom";
+import Signin from './components/signin';
+import Home from './components/Home';
 
 function App() {
 
   return (
     <>
-    {/* <Signin /> */}
-    <Navbar />
-    {/* <Footer /> */}
+
+    <Routes>
+      <Route path='/signin' element={<Signin />} />
+      <Route path='/' element={<Home />} />
+    </Routes>
     </>
   )
 }
