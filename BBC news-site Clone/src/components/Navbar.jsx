@@ -19,7 +19,7 @@ const Navbar = () => {
   }
   console.log(auth.currentUser);
   return (
-    <div className="grid grid-cols-3 bg-black h-[64px] text-white">
+    <div className="grid grid-cols-3 bg-black h-[64px] text-white fixed">
       <div className="flex items-center">
         <img className="h-[56px] pl-[130px] pr-1 pt-3" src={logo} alt="" />
         {auth.currentUser ? (
@@ -63,7 +63,7 @@ const Navbar = () => {
         </button>
       </div>
       <div className="flex items-center pl-32">
-        <button className="flex bg-slate-900 hover:bg-gray-600 gap-1 pl-2 items-center h-10 w-[198px] text-[13px] font-bold">
+        <button className="flex bg-slate-900 hover:bg-gray-800 gap-1 pl-2 items-center h-10 w-[198px] text-[13px] font-bold">
           <PiMagnifyingGlassBold className="text-[19px]" />
           Search BBC
         </button>
