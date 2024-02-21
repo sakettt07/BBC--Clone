@@ -1,18 +1,11 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
 import Navbar from "./Navbar";
-// import randimg from "../../public/randimg.png"
+import Comments from "./Comments";
 
 
 const NewsDetails = () => {
-  const data = [
-    {
-      title: "location.state.data.title",
-      img: "urlToImage",
-      author: "data.author",
-      content: "data.content",
-    },
-  ];
+
   const location = useLocation();
   console.log(location);
   return (
@@ -24,7 +17,9 @@ const NewsDetails = () => {
           <p className="pl-14 pt-8 text-[24px]">{location.state.data.description}</p>
           <img className="pl-14 w-[90%] h-[52%] object-cover rounded-s-full rounded-full pt-8" src={location.state.data.urlToImage} alt="" />
         </div>
-        <div className="bg-yellow-600 w-[50%]"></div>
+        <div className=" mt-[80px] w-[45%]">
+          <Comments url={location.state.data.url} />
+        </div>
       </div>
     </>
   );
