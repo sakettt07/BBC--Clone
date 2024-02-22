@@ -17,7 +17,7 @@ const Navbar = (props) => {
       console.log(error);
     }
   }
-  console.log(auth.currentUser);
+  // console.log(auth.currentUser);
   return (
     <div className="grid grid-cols-3 bg-black h-[64px] text-white fixed">
       <div className="flex items-center">
@@ -64,7 +64,7 @@ const Navbar = (props) => {
       </div>
       <div className="flex items-center pl-32">
           <PiMagnifyingGlassBold className="text-[19px] mr-3" />
-        <input onChange={(e)=>props.setSearch(e.target.value)} className="flex bg-slate-900 hover:bg-gray-800 gap-1 pl-4 items-center h-10 w-[198px] text-[13px] font-bold" placeholder="Seach BBC"/>
+        <input onChange={(e)=>props.setSearch(e.target.value.toLowerCase())} className="flex bg-slate-900 hover:bg-gray-800 gap-1 pl-4 items-center h-10 w-[198px] text-[13px] font-bold" placeholder="Seach BBC"/>
       </div>
     </div>
   );
