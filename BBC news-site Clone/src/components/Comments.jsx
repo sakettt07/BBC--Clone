@@ -1,7 +1,10 @@
-import { doc, addDoc, collection, getDoc, getDocs } from "firebase/firestore";
+import { doc, addDoc, collection, getDocs } from "firebase/firestore";
 import React, { useEffect, useState } from "react";
-import { database } from "../firebase/setup";
+import { database,auth } from "../firebase/setup";
 import { LiaCommentSolid } from "react-icons/lia";
+
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Comments = (props) => {
   const [comments, setComments] = useState("");
@@ -10,16 +13,14 @@ const Comments = (props) => {
   const addComments = async () => {
     const newsDoc = doc(database, "News", `${props.url.substr(-10, 10)}`);
     const commentsRef = collection(newsDoc, "Comments");
+    auth.currentUser ==null && toast.warning("Please Login to comment");
     try {
-      await addDoc(commentsRef, {
+      auth.currentUser && await addDoc(commentsRef, {
         comments: comments,
         name: auth.currentUser.displayName,
         profileImg: auth.currentUser.photoURL,
       });
-      console.log("comment added successfully");
-      setTimeout(() => {
-        setComments("");
-      }, 0);
+      toast.success("Comment Added");
     } catch (error) {
       console.log(error);
     }
@@ -74,12 +75,14 @@ const Comments = (props) => {
               key={data.id}
               className=" overflow-hidden flex flex-row items-center gap-3 mt-3 bg-[#d9d9d9] p-6"
             >
-              <LiaCommentSolid />
+              {/* <LiaCommentSolid /> */}
+              <img className="w-9 h-9 rounded-full" src={data.profileImg} />
+              <p className="mt-[-29px] text-[12px] text-slate-500">{data.name}</p>
               <p className="text-[18px] font-semibold">{data.comments}</p>
-              <img src={data.photoURL} alt="" />
             </div>
           ))}
         </div>
+        <ToastContainer autoClose={4000} position="top-center" />
       </div>
     </div>
   );

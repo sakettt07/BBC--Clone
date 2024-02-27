@@ -9,7 +9,6 @@ import randimg from "/randimg.png"
 const NewsDetails = () => {
 
   const location = useLocation();
-  console.log(location);
   return (
     <>
       <Navbar />

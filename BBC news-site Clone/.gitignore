@@ -7,6 +7,7 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
+.gitignore
 node_modules
 dist
 dist-ssr
@@ -22,3 +23,9 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+#misc
+.env
+
+# some keys
+c236908245c54482b8993b7af935a642 --For the news
+AIzaSyAsLyXsNLyi0U-SoUlFhUzgQJaYenbuVGs --For the firebase

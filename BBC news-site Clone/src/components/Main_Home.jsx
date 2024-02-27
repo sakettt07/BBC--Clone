@@ -19,13 +19,9 @@ function Main_Home(props) {
       console.log(error);
     }
   }
-
-
-
-
   const getNews = () => {
     fetch(
-      `https://newsapi.org/v2/everything?q=${props.menu ?props.menu:"All"}&apiKey=a56046c2b5da413fa6da857f100a1f59`
+      `https://newsapi.org/v2/everything?q=${props.menu ?props.menu:"All"}&apiKey=c236908245c54482b8993b7af935a642`
     )
       .then((res) => res.json())
       .then((json) => setNews(json.articles.slice(0,30)));
@@ -33,13 +29,12 @@ function Main_Home(props) {
   useEffect(() => {
     getNews();
   }, [news]);
-  console.log(news);
   return (
-    <div className=" grid grid-cols-3 max-h-screen ml-16 mt-[69px] p-6">
+    <div className=" grid grid-cols-1 md:grid md:grid-cols-3 sm:grid sm:grid-cols-2 max-h-screen ml-16 mt-[69px] p-6">
       {news?.filter(data=>data.title.includes(props.search)).map((data) => {
         return (
           <Link onClick={()=>addNews(data)} to="/details" state={{data:data}}>
-          <div className="max-w-sm rounded overflow-hidden shadow-lg">
+          <div className="max-w-sm  mr-10 max-h-min mb-4 rounded overflow-hidden shadow-lg">
             {data.urlToImage ? (
             <img className="w-full" src={data.urlToImage} alt={data.title} />
           ) : (

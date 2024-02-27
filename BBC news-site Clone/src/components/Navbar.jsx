@@ -6,6 +6,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { auth } from "../firebase/setup";
 import { MdOutlineLogout } from "react-icons/md";
 import { signOut } from "firebase/auth";
+import { TiThMenu } from "react-icons/ti";
 
 const Navbar = (props) => {
   const navigate=useNavigate();
@@ -17,26 +18,25 @@ const Navbar = (props) => {
       console.log(error);
     }
   }
-  // console.log(auth.currentUser);
   return (
-    <div className="grid grid-cols-3 bg-black h-[64px] text-white fixed">
+    <div className="grid grid-cols-3 min-w-full bg-black h-[64px] text-white fixed">
       <div className="flex items-center">
-        <img className="h-[56px] pl-[130px] pr-1 pt-3" src={logo} alt="" />
+        <img className="h-[56px] pl-[10px] md:pl-[130px] sm:pl-[80px] pr-1 pt-3" src={logo} alt="" />
         {auth.currentUser ? (
-          <button onClick={logout} className="text-white flex gap-[6px] w-52 hover:underline text-[13px] font-bold items-center pl-3">
-          <MdOutlineLogout className="h-6 w-[23px]" />
-          Log Out
-        </button>
-        ) : (
-          <Link to="/signin">
-            <button className="text-white flex gap-[6px] w-52 hover:underline text-[13px] font-bold items-center pl-3">
-              <FaUser className="h-6 w-[23px]" />
-              Sign in
-            </button>
-          </Link>
-        )}
+  <button onClick={logout} className="text-white flex gap-[6px] w-52 hover:underline text-[16px] font-bold items-center pl-3">
+    <MdOutlineLogout className="h-6 w-[23px] md:hidden block" />
+    <span className="md:block hidden">Log Out</span>
+  </button>
+) : (
+  <Link to="/signin">
+    <button className="text-white flex gap-[6px] w-52 hover:underline text-[13px] font-bold items-center pl-3">
+      <FaUser className="h-6 w-[23px] md:hidden block" />
+      <span className="md:block hidden">Sign in</span>
+    </button>
+  </Link>
+)}
       </div>
-      <div className="flex gap-[31px] font-bold text-[13px]">
+      <div className=" hidden md:flex lg:flex sm:flex gap-[31px] font-bold text-[13px]">
         <button onClick={()=>props.setMenu("All")} className=" hover:border-solid hover:border-b-8 hover:border-white">
           Home
         </button>
@@ -62,10 +62,12 @@ const Navbar = (props) => {
           Culture
         </button>
       </div>
-      <div className="flex items-center pl-32">
-          <PiMagnifyingGlassBold className="text-[19px] mr-3" />
-        <input onChange={(e)=>props.setSearch(e.target.value.toLowerCase())} className="flex bg-slate-900 hover:bg-gray-800 gap-1 pl-4 items-center h-10 w-[198px] text-[13px] font-bold" placeholder="Seach BBC"/>
+      <div className="flex items-center w-[120%] -gap-[10px] ml-20 md:pl-32">
+          <PiMagnifyingGlassBold className="text-[29px] mr-2 md:text-[24px] sm:text-[19px]" />
+        <input onChange={(e)=>props.setSearch(e.target.value.toLowerCase())} className="flex bg-slate-900 hover:bg-gray-800 pl-3 items-center h-[28px] md:h-[40px] w-[100px] md:w-[198px] text-[13px] font-bold" placeholder="Seach BBC"/>
+      <TiThMenu className=" flex md:hidden text-[59px] md:text-[20px] ml-5" />
       </div>
+
     </div>
   );
 };
