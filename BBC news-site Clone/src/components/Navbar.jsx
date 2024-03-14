@@ -36,37 +36,37 @@ const Navbar = (props) => {
   </Link>
 )}
       </div>
-      <div className=" hidden md:flex lg:flex sm:flex gap-[31px] font-bold text-[13px]">
+      <div className=" hidden md:flex gap-[31px] font-bold text-[13px]">
         <button onClick={()=>props.setMenu("All")} className=" hover:border-solid hover:border-b-8 hover:border-white">
           Home
         </button>
-        <button onClick={()=>props.setMenu("Science")} className=" hover:border-solid hover:border-b-8 hover:border-red-500">
+        <button onClick={()=>props.setMenu("science")} className=" hover:border-solid hover:border-b-8 hover:border-red-500">
           Science
         </button>
-        <button onClick={()=>props.setMenu("Movies")} className=" hover:border-solid hover:border-b-8 hover:border-yellow-400">
+        <button onClick={()=>props.setMenu("movies")} className=" hover:border-solid hover:border-b-8 hover:border-yellow-400">
           Movies
         </button>
-        <button onClick={()=>props.setMenu("Future")} className=" hover:border-solid hover:border-b-8 hover:border-green-400">
+        <button onClick={()=>props.setMenu("future")} className=" hover:border-solid hover:border-b-8 hover:border-green-400">
           Future
         </button>
-        <button onClick={()=>props.setMenu("Food")} className=" hover:border-solid hover:border-b-8 hover:border-blue-400">
+        <button onClick={()=>props.setMenu("food")} className=" hover:border-solid hover:border-b-8 hover:border-blue-400">
           Food
         </button>
-        <button onClick={()=>props.setMenu("Worklife")} className=" hover:border-solid hover:border-b-8 hover:border-blue-600">
+        <button onClick={()=>props.setMenu("worklife")} className=" hover:border-solid hover:border-b-8 hover:border-blue-600">
           Worklife
         </button>
-        <button onClick={()=>props.setMenu("Travel")} className=" hover:border-solid hover:border-b-8 hover:border-green-700">
+        <button onClick={()=>props.setMenu("travel")} className=" hover:border-solid hover:border-b-8 hover:border-green-700">
           Travel
         </button>
-        <button onClick={()=>props.setMenu("Culture")} className=" hover:border-solid hover:border-b-8 hover:border-violet-600">
+        <button onClick={()=>props.setMenu("culture")} className=" hover:border-solid hover:border-b-8 hover:border-violet-600">
           Culture
         </button>
       </div>
-      <div className="flex items-center w-[120%] -gap-[10px] ml-20 md:pl-32">
+      <div className="hidden md:flex items-center w-[120%] -gap-[10px] ml-20 md:pl-32">
           <PiMagnifyingGlassBold className="text-[29px] mr-2 md:text-[24px] sm:text-[19px]" />
         <input onChange={(e)=>props.setSearch(e.target.value.toLowerCase())} className="flex bg-slate-900 hover:bg-gray-800 pl-3 items-center h-[28px] md:h-[40px] w-[100px] md:w-[198px] text-[13px] font-bold" placeholder="Seach BBC"/>
-      <TiThMenu className=" flex md:hidden text-[59px] md:text-[20px] ml-5" />
       </div>
+      <TiThMenu className="flex md:hidden text-[39px] text-center ml-40 mt-3" />
 
     </div>
   );
