@@ -1,4 +1,4 @@
-                                                          BBC - Clone
+BBC- Clone
 
 In this project i have made a BBC Clone I am being Specific its not a complete UI clone only its landing page looks similar to that .
 But it is differemt from inside .I have learned a couple of things.
