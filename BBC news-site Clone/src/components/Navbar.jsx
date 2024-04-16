@@ -29,7 +29,7 @@ const Navbar = (props) => {
   </button>
 ) : (
   <Link to="/signin">
-    <button className="text-white flex gap-[6px] w-52 hover:underline text-[13px] font-bold items-center pl-3">
+    <button className="text-white flex pt-3 md:pt-0 gap-[6px] w-52 hover:underline text-[13px] font-bold items-center pl-3">
       <FaUser className="h-6 w-[23px] md:hidden block" />
       <span className="md:block hidden">Sign in</span>
     </button>

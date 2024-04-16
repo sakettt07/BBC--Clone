@@ -14,7 +14,8 @@ const Footer = () => {
                 <li className='text-white font-bold  text-[9px] md:text-[18px] hover:underline'><a href="">Parental Guidelines</a></li>
             </ul>
         </div>
-        <h3 className='text-white text-[10px] md:text-sm text-center'>Copyright © 2024 Saket Gupta. The BBC is not responsible for the content of external sites.</h3>
+        <h3 className='text-white text-[9px] px-5 md:text-sm text-center'>Copyright © 2024 Saket Gupta.</h3>
+        <p className='text-white text-[9px] text-center md:text-sm'> The BBC is not responsible for the content of external sites.</p>
     </div>
   )
 }

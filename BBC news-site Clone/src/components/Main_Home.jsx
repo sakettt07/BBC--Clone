@@ -63,7 +63,7 @@ function Main_Home(props) {
   }, []); 
 
   return (
-    <div className="grid grid-cols-1 md:grid md:grid-cols-3 sm:grid sm:grid-cols-2 max-h-screen ml-16 mt-[69px] p-6">
+    <div className="grid grid-cols-1 md:grid md:grid-cols-3 ml-10 md:ml-16 mt-[69px] p-2 mr-6 md:p-6">
       {news
         ?.filter((data) => data.title.includes(props.search))
         .map((data, index) => (
@@ -73,7 +73,7 @@ function Main_Home(props) {
             to="/details"
             state={{ data: data }}
           >
-            <div className="max-w-sm mr-10 max-h-min mb-4 rounded overflow-hidden shadow-lg">
+            <div className="max-w-sm md:mr-10 max-h-min mb-4 rounded overflow-hidden shadow-lg">
               {data.urlToImage ? (
                 <img
                   className="w-full"
