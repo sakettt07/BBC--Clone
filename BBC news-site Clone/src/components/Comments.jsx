@@ -60,7 +60,7 @@ const Comments = (props) => {
         />
         <button
           onClick={addComments}
-          className="bg-black w-20 text-white rounded-2xl hover:bg-red-400"
+          className="bg-black rounded-md w-16 md:w-20 text-white md:rounded-2xl hover:bg-red-400"
         >
           Add
         </button>
