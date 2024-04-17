@@ -4,7 +4,7 @@ import Home from './components/Home';
 import NewsDetails from './components/NewsDetails';
 import Error from "./components/Error";
 import { IoMdArrowRoundBack } from "react-icons/io";
-import Signin from './components/signin';
+import Signin from './components/Signinn';
 
 
 function App() {

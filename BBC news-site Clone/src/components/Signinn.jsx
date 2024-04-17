@@ -6,7 +6,7 @@ import { auth,googleProvider } from '../firebase/setup';
 import Footer from './Footer';
 import { useNavigate } from 'react-router-dom';
 
-const Signin = () => {
+const Signinn = () => {
 
   const navigate=useNavigate();
   const googleSignin=async()=>{
@@ -41,4 +41,4 @@ const Signin = () => {
   )
 }
 
-export default Signin;
+export default Signinn;
