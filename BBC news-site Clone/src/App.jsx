@@ -1,10 +1,10 @@
 import './App.css';
 import {Link, Route,Routes,useLocation} from "react-router-dom";
-import Signin from './components/signin';
 import Home from './components/Home';
 import NewsDetails from './components/NewsDetails';
 import Error from "./components/Error";
 import { IoMdArrowRoundBack } from "react-icons/io";
+import Signin from './components/signin';
 
 
 function App() {
